@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\ex1.o"
+--library_type=microlib --ropi --rwpi --noscanlib --strict --scatter ".\Ex1.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Ex1.map" -o .\Ex1.axf

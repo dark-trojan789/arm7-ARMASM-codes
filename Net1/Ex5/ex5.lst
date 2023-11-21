@@ -1,0 +1,89 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM1, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000 E28F0018        ADR              R0,Q
+    4 00000004 E59F1018        LDR              R1,=VAL
+    5 00000008 E5D03000        LDRB             R3,[R0]
+    6 0000000C E1A04103        MOV              R4,R3,LSL#2
+    7 00000010 E1A040A4        MOV              R4,R4,LSR#1
+    8 00000014 E6905104        LDR              R5,[R0],R4,LSL#2
+    9 00000018 E5C15000        STRB             R5,[R1]
+   10 0000001C EAFFFFFE 
+                       S       B                S
+   11 00000020 01      Q       DCB              1
+   12 00000021 00 00 00 
+              00000000         AREA             MEMORY, DATA, READWRITE
+   13 00000000 11223344 
+                       VAL     DCD              0x11223344
+   14 00000004                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\ex5.d -o.\ex5.o -IC:\K
+eil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --predef
+ine="__EVAL SETA 1" --list=.\ex5.lst Ex5\Ex5.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file Ex5\Ex5.asm
+   Uses
+      None
+Comment: ENTRY unused
+PROGRAM1 00000000
+
+Symbol: PROGRAM1
+   Definitions
+      At line 1 in file Ex5\Ex5.asm
+   Uses
+      None
+Comment: PROGRAM1 unused
+Q 00000020
+
+Symbol: Q
+   Definitions
+      At line 11 in file Ex5\Ex5.asm
+   Uses
+      At line 3 in file Ex5\Ex5.asm
+Comment: Q used once
+S 0000001C
+
+Symbol: S
+   Definitions
+      At line 10 in file Ex5\Ex5.asm
+   Uses
+      At line 10 in file Ex5\Ex5.asm
+Comment: S used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MEMORY 00000000
+
+Symbol: MEMORY
+   Definitions
+      At line 12 in file Ex5\Ex5.asm
+   Uses
+      None
+Comment: MEMORY unused
+VAL 00000000
+
+Symbol: VAL
+   Definitions
+      At line 13 in file Ex5\Ex5.asm
+   Uses
+      At line 4 in file Ex5\Ex5.asm
+Comment: VAL used once
+2 symbols
+339 symbols in table

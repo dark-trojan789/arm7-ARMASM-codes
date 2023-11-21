@@ -1,0 +1,104 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ASCENDING, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000 E59FC054        LDR              R12,=SOURCE
+    4 00000004 E59FD054        LDR              R13,=DEST
+    5 00000008 E3A0E00C        MOV              R14,#12
+    6 0000000C E8BC0FFF        LDMIA            R12!,{R0-R11}
+    7 00000010 E8AD0FFF        STMIA            R13!,{R0-R11}
+    8 00000014 E8BC0007        LDMIA            R12!,{R0-R2}
+    9 00000018 E8AD0007        STMIA            R13!,{R0-R2}
+   10 0000001C EAFFFFFE 
+                       S       B                S
+   11 00000020 00000001 
+              00000002 
+              00000003 
+              00000004 
+              00000005 
+              00000006 
+              00000007 
+              00000008 
+              00000009 
+              0000000A 
+              0000000B 
+              0000000C 
+              0000000D 
+              0000000E 
+              0000000F SOURCE  DCD              1,2,3,4,5,6,7,8,9,0xA,0xB,0xC,0
+xD,0xE,0xF
+   12 0000005C         
+   13 0000005C 00000000 
+              00000000         AREA             DATA1,DATA,READWRITE
+   14 00000000 45 00   DEST    DCW              0x0045
+   15 00000002                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\ex6.d -o.\ex6.o -IC:\K
+eil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --predef
+ine="__EVAL SETA 1" --list=.\ex6.lst Ex6\Ex6.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ASCENDING 00000000
+
+Symbol: ASCENDING
+   Definitions
+      At line 1 in file Ex6\Ex6.asm
+   Uses
+      None
+Comment: ASCENDING unused
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file Ex6\Ex6.asm
+   Uses
+      None
+Comment: ENTRY unused
+S 0000001C
+
+Symbol: S
+   Definitions
+      At line 10 in file Ex6\Ex6.asm
+   Uses
+      At line 10 in file Ex6\Ex6.asm
+Comment: S used once
+SOURCE 00000020
+
+Symbol: SOURCE
+   Definitions
+      At line 11 in file Ex6\Ex6.asm
+   Uses
+      At line 3 in file Ex6\Ex6.asm
+Comment: SOURCE used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA1 00000000
+
+Symbol: DATA1
+   Definitions
+      At line 13 in file Ex6\Ex6.asm
+   Uses
+      None
+Comment: DATA1 unused
+DEST 00000000
+
+Symbol: DEST
+   Definitions
+      At line 14 in file Ex6\Ex6.asm
+   Uses
+      At line 4 in file Ex6\Ex6.asm
+Comment: DEST used once
+2 symbols
+339 symbols in table
